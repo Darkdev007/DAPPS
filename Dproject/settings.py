@@ -145,7 +145,7 @@ EMAIL_HOST_USER = 'Senderhqq@gmail.com'
 EMAIL_HOST_PASSWORD = 'Maricopa20!'
 
 
-# try:
-#     from .local_settings import *
-# except ImportError:
-#     pass
+try:
+     from .local_settings import *
+except ImportError:
+    pass
