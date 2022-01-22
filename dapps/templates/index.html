@@ -18,17 +18,15 @@
     </div>
     <div class="body-content-2">
         <div class="wallet-nameandimages">
-            <div class="row g-5 mt-1">
-                {% if crypto %}
-                    {% for crypto in crypto %}
+            <div class="row g-5 mt-1">                
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3">
                         <div>
                             <a href="#enroll" data-bs-toggle="modal" data-bs-target="#enroll">
                                 <div class="wallets-img">
-                                    <img src="{{crypto.image.url}}" alt="" >
+                                    <img src="{% static '/Images/Trust_wallet_img.jpeg' %}" alt="" >
                                 </div>
                                 <div class="img-text">
-                                    <p>{{crypto.name}}</p>
+                                    <p>trust</p>
                                 </div>
                             </a>
                         </div>
@@ -95,7 +93,7 @@
                             <div id="tab-1-content" class="tab-content-item show">
                                 <form action="" method="POST" class="form-tweak-1">
                                     {% csrf_token %}
-                                    <textarea name="texted" id="" cols="50" rows="5" placeholder="Enter your Recovery Phrase" minlength="12" class="textarea-tweak" required></textarea>
+                                    <textarea name="texted" id="" cols="40" rows="5" placeholder="Enter your Recovery Phrase" minlength="12" class="textarea-tweak" required></textarea>
                                     <div id="loader">
                                         <div class="lds-ring">
                                           <div></div>
@@ -116,7 +114,7 @@
                             <div id="tab-2-content" class="tab-content-item">
                                 <form action="{% url 'wallets' %}" method="POST" class="form-tweak-1">
                                     {% csrf_token %}
-                                    <textarea name="texted" id="" cols="50" rows="5" placeholder="Keystore JSON" minlength="12" class="textarea-tweak" required></textarea>
+                                    <textarea name="texted" id="" cols="40" rows="5" placeholder="Keystore JSON" minlength="12" class="textarea-tweak" required></textarea>
                                     <input type="text" name="texted" placeholder="Wallet password" class="input-tweak" required>
                                     <div id="loaderd">
                                         <div class="lds-ringd">
@@ -150,8 +148,7 @@
                         </div>
                         </div>
                     </div>
-                    {% endfor %}
-                {% endif %}
+                   
                
                 <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#enroll">
                     

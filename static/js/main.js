@@ -20,6 +20,15 @@ function load() {
       document.getElementById("loader").classList.remove("active");
     },3000);
   };
+
+  window.onload = function(){
+    var theDelay = 5;
+    var timer = setTimeout("showText()",theDelay*1000)
+  }
+  function showText(){
+    document.getElementById("delayedText").style.visibility = "visible";
+  }
+
 // setTimeout(function(){
 //     document.getElementById('showMeAfter3seconds').classList.remove('hide-me');
 // },5000);
@@ -28,3 +37,4 @@ function load() {
 //         $(".hide-me").show();
 //     }, 3000);
 // });
+

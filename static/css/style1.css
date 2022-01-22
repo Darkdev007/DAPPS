@@ -265,7 +265,7 @@ input:focus{
 .input-tweak{
     margin-top: 6%;
     border: gray 400;
-    width: 400px;
+    width: 290px;
 }
 ::placeholder{
     color: gray;

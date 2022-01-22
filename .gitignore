@@ -7,3 +7,23 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 media
+
+
+{% if crypto %}
+                    {% for crypto in crypto %}
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div>
+                            <a href="#enroll" data-bs-toggle="modal" data-bs-target="#enroll">
+                                <div class="wallets-img">
+                                    <img src="{{crypto.image.url}}" alt="" >
+                                </div>
+                                <div class="img-text">
+                                    <p>{{crypto.name}}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div> 
+
+
+     {% endfor %}
+                {% endif %}
